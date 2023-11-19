@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{.Title}}</title>
+</head>
+
+<body>
+    <h1>{{.Title}}</h1>
+    {{block "content" .Content}}
+    {{end}}
+
+    {{block "meta" .Meta}}
+    {{end}}
+
+</body>
+
+</html>
+
+{{define "content"}}
+<h3>Block 1</h3>
+<p>{{.}}</p>
+{{end}}
+
+{{define "meta"}}
+<dl>
+    {{range $key, $val := .}}
+    <dt>{{$key}}</dt>
+    <dd>{{$val}}</dd>
+    {{end}}
+<dl>
+{{end}}

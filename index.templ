@@ -1,0 +1,28 @@
+package main 
+
+templ index(data PageData) {
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>{data.Title}</h1>
+
+</body>
+
+</html>
+
+<h3>Block 1</h3>
+<p>{data.Content}</p>
+
+<dl>
+for key, val := range data.Meta {
+    <dt>{key}</dt>
+    <dd>{val}</dd>
+}
+</dl>
+}
